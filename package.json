@@ -1,0 +1,84 @@
+{
+  "name": "acta",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Automação segura de processos web para equipes de operações.",
+  "main": "./out/main/index.js",
+  "author": "Acta",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/caoiw/acta.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caoiw/acta/issues"
+  },
+  "homepage": "https://github.com/caoiw/acta#readme",
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@11.12.1",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "dev:renderer": "vite --config vite.renderer.config.ts",
+    "build": "npm run typecheck && electron-vite build",
+    "preview": "electron-vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json",
+    "test": "npm run test:unit",
+    "test:unit": "vitest run",
+    "test:e2e": "playwright test",
+    "test:all": "npm run typecheck && npm run test:unit && npm run build && npm run test:e2e",
+    "test:watch": "vitest",
+    "icon:build": "node scripts/generate-icon.mjs",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,html}\" \"tests/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" \".github/**/*.{yml,md}\" \"*.{json,ts,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,css,html}\" \"tests/**/*.{ts,tsx}\" \"scripts/**/*.mjs\" \".github/**/*.{yml,md}\" \"*.{json,ts,md}\"",
+    "package:win": "npm run icon:build && npm run build && electron-builder --win nsis"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "lucide-react": "latest",
+    "playwright-core": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "5.2.0",
+    "electron": "latest",
+    "electron-builder": "latest",
+    "electron-vite": "5.0.0",
+    "prettier": "^3.9.5",
+    "typescript": "latest",
+    "vite": "7.3.6",
+    "vitest": "latest"
+  },
+  "overrides": {
+    "exceljs": {
+      "uuid": "^11.1.1"
+    }
+  },
+  "build": {
+    "appId": "com.acta.desktop",
+    "productName": "Acta",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "out/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

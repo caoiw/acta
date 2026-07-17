@@ -1,0 +1,32 @@
+name: Sugerir melhoria
+description: Proponha uma melhoria de produto com problema, público e resultado esperado.
+title: "[Melhoria]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema operacional
+      description: Qual tarefa corporativa está difícil ou repetitiva hoje?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Resultado desejado
+      description: Explique o que deveria ficar mais simples, seguro ou confiável.
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: Principal público
+      options:
+        - RH e treinamento
+        - Financeiro
+        - Compras
+        - Operações
+        - TI e segurança
+        - Outro
+    validations:
+      required: true
