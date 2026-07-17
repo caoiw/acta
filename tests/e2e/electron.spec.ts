@@ -27,7 +27,7 @@ test.describe.serial("Electron real + Edge", () => {
         "dist",
         "electron.exe",
       ),
-      args: [projectRoot],
+      args: [join(projectRoot, "out", "main", "index.js")],
       cwd: projectRoot,
       env: {
         ...process.env,
