@@ -18,15 +18,17 @@ test.describe.serial("Electron real + Edge", () => {
   let dataDirectory: string;
 
   const launch = async (): Promise<void> => {
+    const projectRoot = process.cwd();
     app = await electron.launch({
       executablePath: join(
-        process.cwd(),
+        projectRoot,
         "node_modules",
         "electron",
         "dist",
         "electron.exe",
       ),
-      args: ["."],
+      args: [projectRoot],
+      cwd: projectRoot,
       env: {
         ...process.env,
         ACTA_E2E: "1",
