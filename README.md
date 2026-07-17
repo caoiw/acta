@@ -43,6 +43,7 @@ Requisitos recomendados:
 
 ```powershell
 npm install
+npm run electron:install
 npm run dev
 ```
 
@@ -58,14 +59,15 @@ Para testar com dados próprios, use [colaboradores.csv](examples/colaboradores.
 
 ## Comandos de qualidade
 
-| Comando               | Finalidade                                                                                                      |
-| --------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `npm run typecheck`   | Verifica os processos main, preload, renderer e tipos compartilhados.                                           |
-| `npm run test:unit`   | Executa testes de schema, domínio, fluxo, store criptografado e planilhas.                                      |
-| `npm run test:e2e`    | Executa jornadas no Edge, Electron real, responsividade, evidências visuais e pacote Windows quando disponível. |
-| `npm run build`       | Gera o build de produção.                                                                                       |
-| `npm run package:win` | Gera o ícone, o executável e o instalador NSIS em `release/`.                                                   |
-| `npm audit`           | Confere vulnerabilidades conhecidas das dependências.                                                           |
+| Comando                    | Finalidade                                                                                                      |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `npm run electron:install` | Instala o runtime Electron fixado no lockfile; é idempotente e obrigatório após um checkout limpo.              |
+| `npm run typecheck`        | Verifica os processos main, preload, renderer e tipos compartilhados.                                           |
+| `npm run test:unit`        | Executa testes de schema, domínio, fluxo, store criptografado e planilhas.                                      |
+| `npm run test:e2e`         | Executa jornadas no Edge, Electron real, responsividade, evidências visuais e pacote Windows quando disponível. |
+| `npm run build`            | Gera o build de produção.                                                                                       |
+| `npm run package:win`      | Gera o ícone, o executável e o instalador NSIS em `release/`.                                                   |
+| `npm audit`                | Confere vulnerabilidades conhecidas das dependências.                                                           |
 
 O gate usado nesta entrega cobre 20 testes unitários e 12 testes E2E, incluindo execução real de uma linha, persistência após reinício e smoke test do `Acta.exe` empacotado.
 

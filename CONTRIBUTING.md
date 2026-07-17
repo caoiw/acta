@@ -6,6 +6,7 @@ Use Windows 11, Node.js 22 LTS, npm e Microsoft Edge. Depois:
 
 ```powershell
 npm ci
+npm run electron:install
 npm run dev
 ```
 
