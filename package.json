@@ -50,7 +50,7 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "5.2.0",
-    "electron": "42.3.3",
+    "electron": "42.7.0",
     "electron-builder": "latest",
     "electron-vite": "5.0.0",
     "prettier": "^3.9.5",
