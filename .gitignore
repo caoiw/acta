@@ -21,3 +21,6 @@ browser-profiles/
 runs/
 *.log
 .DS_Store
+.praxis.local/
+.praxis/cache/
+.praxis/index/
