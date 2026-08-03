@@ -45,15 +45,15 @@
     "zod": "latest"
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "^1.62.1",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@vitejs/plugin-react": "5.2.0",
-    "electron": "42.3.3",
+    "electron": "42.8.0",
     "electron-builder": "latest",
     "electron-vite": "5.0.0",
-    "prettier": "^3.9.5",
+    "prettier": "^3.9.6",
     "typescript": "latest",
     "vite": "7.3.6",
     "vitest": "latest"
