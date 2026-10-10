@@ -1,6 +1,5 @@
 # Acta
 
-[![CI](https://github.com/caoiw/acta/actions/workflows/ci.yml/badge.svg)](https://github.com/caoiw/acta/actions/workflows/ci.yml)
 ![Version](https://img.shields.io/badge/version-0.1.0-3158d4)
 ![Windows](https://img.shields.io/badge/Windows-first-17213a?logo=windows)
 ![Local-first](https://img.shields.io/badge/dados-local--first-198754)
